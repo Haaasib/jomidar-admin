@@ -21,8 +21,10 @@ https://www.youtube.com/watch?v=fy68G2Yxjtg
 ```add_ace group.admin admin allow```
 
 ## Logs
-exports['jomidar-admin']:CreateLog('Inventory', 'Added item or something')
-exports['jomidar-admin']:CreateLog('Inventory', 'Added item or something', 'DATA HERE')
+
+```exports['jomidar-admin']:CreateLog('Inventory', 'Added item or something')```
+
+```exports['jomidar-admin']:CreateLog('Inventory', 'Added item or something', 'DATA HERE')```
 
 ## Credits 
 mercy-Collective
