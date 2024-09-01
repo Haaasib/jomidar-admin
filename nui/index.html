@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J0M1D4R - Admin Menu</title>
+    <!-- CSS CDN -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css" integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link href="./webfonts/all.css" rel="stylesheet">
+    <link href="./webfonts/all.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/commands.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/playerlist.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/pinnedplayers.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/recentbans.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/playerlogs.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/chats.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pages/options.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+        <div class="menu-main-container">
+
+            <div class="admin-container">
+                <div class="admin-box">
+                    <div class="admin-exit">Exit</div>
+                    <div class="admin-exit-box">ESC</div>
+                </div>
+            </div>
+
+            <div class="menu-page-line"></div>
+
+            <!-- Sidebar -->
+            <div class="menu-size-change">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-sidebar-pages">
+                    <!-- Upper -->
+
+                    <div class="menu-sidebar-page commands selected waves-effect waves-light" data-Action="Commands">
+                        <svg width="7.4vh" height="7.5vh" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_672_792)">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4819 20.1312C29.6147 20.6424 29.9854 21.9358 30.9991 21.9358C32.0128 21.9358 32.3835 20.6424 31.5164 20.1312C31.2312 19.963 30.7671 19.963 30.4819 20.1312ZM40.0175 20.2269C37.5789 21.0224 35.6224 22.1543 34.1872 23.6002C33.2024 24.5922 32.6 25.5764 32.2272 26.8025C31.9885 27.5874 31.9238 29.1112 32.0945 29.9256C32.528 31.9945 33.8931 33.2485 36.4107 33.8903C37.3178 34.1217 38.6533 34.2903 40.7652 34.4404C43.3913 34.627 44.3879 34.7837 45.0602 35.1161C45.9293 35.5456 46.1778 36.3116 45.7452 37.228C45.3225 38.1237 44.3183 39.4443 42.9623 40.8877C42.5238 41.3544 42.1287 41.7987 42.0841 41.875C41.9572 42.0925 41.9813 42.5657 42.1315 42.8038C42.4171 43.2569 43.0605 43.4103 43.5256 43.1362C44.2679 42.6986 46.3063 40.9869 47.7339 39.6023C49.8837 37.5172 51.1973 35.7122 51.7718 34.0536C51.9506 33.5374 51.9613 33.4443 51.9583 32.4422C51.9556 31.5602 51.9304 31.2908 51.8108 30.8631C51.3269 29.1346 50.1113 27.9756 48.2293 27.4483C47.0766 27.1253 46.6135 27.0833 43.5984 27.028C42.0401 26.9995 40.562 26.9436 40.3136 26.9039C39.7324 26.8111 39.1914 26.6142 39.014 26.4312C38.7286 26.1366 38.6525 25.6611 38.8264 25.2587C39.0502 24.7405 40.1584 23.3236 41.198 22.2263C41.8975 21.4878 41.998 21.33 41.998 20.9694C41.998 20.4189 41.5667 20.0023 40.9985 20.0039C40.8335 20.0044 40.3921 20.1047 40.0175 20.2269ZM50.4807 20.1312C50.0962 20.3578 49.9985 20.596 49.9983 21.3078L49.998 21.9362L49.348 21.9365C48.8171 21.9367 48.6583 21.9601 48.4808 22.0648C47.8369 22.4444 47.8369 23.3617 48.4808 23.7412C48.6583 23.8459 48.8171 23.8694 49.348 23.8696L49.998 23.8698L49.9983 24.4983C49.9985 25.0116 50.0227 25.1652 50.131 25.3367C50.5236 25.9593 51.4723 25.9593 51.8649 25.3367C51.9731 25.1652 51.9974 25.0116 51.9976 24.4983L51.9979 23.8698L52.6478 23.8696C53.1787 23.8694 53.3376 23.8459 53.5151 23.7412C54.1589 23.3617 54.1589 22.4444 53.5151 22.0648C53.3376 21.9601 53.1787 21.9367 52.6478 21.9365L51.9979 21.9362L51.9976 21.3078C51.9974 20.7945 51.9731 20.6409 51.8649 20.4693C51.5822 20.021 50.9356 19.863 50.4807 20.1312ZM29.4861 31.7949C29.1563 31.9893 29.0473 32.2098 28.9618 32.8556C28.81 34.0006 28.4821 34.6829 27.7478 35.3815C27.067 36.0293 26.25 36.3736 25.1536 36.4746C24.3844 36.5455 24 36.877 24 37.4697C24 38.07 24.3852 38.3959 25.1797 38.4679C26.248 38.5647 27.0941 38.9281 27.7768 39.5834C28.4842 40.2624 28.812 40.9543 28.9618 42.0837C29.0473 42.7296 29.1563 42.95 29.4861 43.1445C29.9168 43.3984 30.5643 43.2562 30.8417 42.8469C30.9082 42.7489 30.9919 42.4209 31.0366 42.0837C31.185 40.9635 31.5086 40.2772 32.2057 39.6031C32.9029 38.929 33.6128 38.6162 34.7714 38.4727C35.1201 38.4295 35.4593 38.3486 35.5607 38.2843C36.1411 37.9167 36.1411 37.0227 35.5607 36.655C35.4593 36.5908 35.1201 36.5098 34.7714 36.4666C33.606 36.3223 32.9053 36.0116 32.1896 35.3221C31.5108 34.6678 31.132 33.8462 31.0316 32.8099C30.9782 32.2587 30.8407 31.9885 30.5164 31.7974C30.2332 31.6304 29.7671 31.6292 29.4861 31.7949ZM54.4805 35.6646C53.6133 36.1758 53.984 37.4692 54.9977 37.4692C56.0114 37.4692 56.3821 36.1758 55.5149 35.6646C55.2298 35.4965 54.7656 35.4965 54.4805 35.6646ZM30.1851 36.1404C30.3506 36.3753 31.1988 37.1854 31.4608 37.3585L31.6225 37.4655L31.4275 37.608C31.1606 37.8031 30.2462 38.69 30.11 38.8859L29.9992 39.0452L29.8885 38.8859C29.745 38.6792 28.7482 37.7154 28.5344 37.5767L28.3696 37.4697L28.5344 37.3606C28.7991 37.1856 29.6469 36.3765 29.8133 36.1404C29.8972 36.0212 29.9808 35.9237 29.9992 35.9237C30.0175 35.9237 30.1012 36.0212 30.1851 36.1404ZM40.5263 37.5654C40.4316 37.6152 39.9149 37.9462 39.3784 38.3011C33.158 42.4144 31.0455 44.9153 32.0559 46.9703C32.4613 47.7949 32.9377 48.16 34.9656 49.2003C37.3418 50.4193 37.8411 50.8768 37.9644 51.9476C38.0174 52.408 38.1778 52.6955 38.4814 52.8745C38.7391 53.0265 39.1922 53.043 39.4582 52.91C39.7084 52.7849 41.1402 51.3372 41.8133 50.5287C43.1029 48.9798 43.6058 47.9751 43.604 46.9519C43.6021 45.8466 43.0932 45.2581 41.3926 44.3944C39.9329 43.6529 39.6462 43.3773 39.6462 42.7154C39.6462 42.1869 39.9517 41.6499 41.4849 39.4831C41.9477 38.8291 41.9985 38.7271 41.9982 38.4519C41.9977 37.8842 41.573 37.468 40.9985 37.4725C40.8335 37.4738 40.621 37.5156 40.5263 37.5654ZM50.4807 41.4655C50.1683 41.6496 50.0127 41.939 49.9637 42.427C49.8833 43.2289 49.6679 43.7052 49.1335 44.2622C48.5996 44.8187 48.0162 45.086 47.1524 45.1699C46.882 45.1962 46.5915 45.2681 46.4721 45.3383C45.8582 45.6992 45.8391 46.6073 46.4374 46.9863C46.5379 47.0499 46.8913 47.1361 47.244 47.1828C48.011 47.2846 48.5047 47.4973 48.9795 47.9309C49.5961 48.494 49.8783 49.0628 49.9637 49.915C49.9877 50.1544 50.0623 50.4287 50.1349 50.544C50.51 51.1403 51.4482 51.1604 51.8412 50.5804C51.9073 50.4829 51.9963 50.1403 52.0453 49.7947C52.1531 49.0342 52.4096 48.5014 52.8877 48.0444C53.4683 47.4895 53.9954 47.2544 54.8435 47.172C55.6088 47.0978 55.9972 46.7607 55.9972 46.171C55.9972 45.5812 55.6088 45.2442 54.8435 45.1699C53.9954 45.0876 53.4683 44.8524 52.8877 44.2976C52.4096 43.8405 52.1531 43.3078 52.0453 42.5472C51.9963 42.2016 51.9073 41.8591 51.8412 41.7615C51.5618 41.3492 50.9161 41.2088 50.4807 41.4655ZM51.446 45.7198L51.9229 46.171L51.4568 46.612L50.9906 47.0529L50.5343 46.6117L50.078 46.1705L50.5213 45.7275C50.7651 45.4838 50.9656 45.2809 50.9668 45.2765C50.9681 45.2722 51.1837 45.4716 51.446 45.7198ZM28.482 47.2664C27.8381 47.6459 27.8381 48.5633 28.482 48.9428C29.1386 49.3299 29.9987 48.8546 29.9987 48.1046C29.9987 47.5547 29.568 47.1382 28.9992 47.1382C28.8172 47.1382 28.6138 47.1886 28.482 47.2664Z" fill="#00F8B9"></path>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_672_792" x="0" y="0" width="80" height="81" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                <feOffset dy="4"></feOffset>
+                                <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+                                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.972549 0 0 0 0 0.72549 0 0 0 1 0"></feColorMatrix>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_672_792"></feBlend>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_672_792" result="shape"></feBlend>
+                              </filter>
+                            </defs>
+                          </svg>
+                        <span class="menu-text command">Commands</span>
+                    </div>
+
+                    <div class="menu-sidebar-page list waves-effect waves-light" data-Action="PlayerList">
+                        <svg width="7.59vh" height="6.75vh" viewBox="0 0 82 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_672_801)">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.5527 20.1025C24.9158 20.3247 24.543 20.6495 24.1981 21.2827C24.061 21.5346 24.0392 21.6635 24.0392 22.2232C24.0392 22.7652 24.0638 22.9205 24.1889 23.1685C24.419 23.6247 24.7515 23.9617 25.2125 24.2058C25.6069 24.4148 25.6706 24.4283 26.263 24.4283C26.8051 24.4283 26.9449 24.4046 27.2588 24.2592C27.7135 24.0484 28.1393 23.6302 28.3737 23.164C28.5293 22.8546 28.553 22.7289 28.551 22.2232C28.5491 21.7224 28.523 21.5876 28.3675 21.2746C28.1523 20.8414 27.6428 20.3541 27.2068 20.1646C26.7653 19.9727 26.0065 19.9441 25.5527 20.1025ZM32.9819 20.5211C32.6849 20.6141 32.1967 21.0462 32.0209 21.3717C31.9131 21.5713 31.8758 21.755 31.8743 22.0934C31.8726 22.4823 31.9017 22.5986 32.0771 22.9042C32.3243 23.3349 32.7559 23.6438 33.2504 23.744C33.495 23.7935 37.0276 23.8093 45.1488 23.7971L56.6994 23.7797L57.014 23.6284C58.3498 22.9856 58.3207 21.1646 56.9649 20.5607C56.711 20.4476 56.1851 20.4426 44.9497 20.4476C36.9217 20.4512 33.1309 20.4745 32.9819 20.5211ZM25.7815 30.2996C25.3394 30.4081 24.8953 30.6718 24.5833 31.0108C23.5518 32.1318 23.9387 33.9234 25.3475 34.5493C26.473 35.0493 27.8371 34.5497 28.3669 33.4434C28.5252 33.1127 28.5532 32.9715 28.5532 32.503C28.5532 31.8067 28.3454 31.3247 27.8483 30.8685C27.3241 30.3874 26.4282 30.1408 25.7815 30.2996ZM32.9712 30.9284C32.5419 31.077 32.0739 31.5597 31.9437 31.988C31.8127 32.419 31.8127 32.587 31.9437 33.018C32.0186 33.2644 32.1375 33.4493 32.3625 33.6691C32.9449 34.2381 31.8093 34.1929 45.052 34.1738L56.7658 34.1569L57.1145 33.9681C57.7009 33.6506 57.9938 33.1625 57.9938 32.503C57.9938 31.8435 57.7009 31.3554 57.1145 31.0379L56.7658 30.8491L45.0161 30.8377C34.4712 30.8274 33.2361 30.8367 32.9712 30.9284ZM25.6324 40.6108C25.2472 40.7269 24.705 41.0999 24.455 41.4208C24.1136 41.8591 23.9823 42.3179 24.0204 42.9395C24.0718 43.7754 24.5477 44.4608 25.3238 44.8162C25.8309 45.0486 26.726 45.0628 27.2068 44.8463C27.6456 44.6487 28.1305 44.1828 28.357 43.7413C28.5255 43.4125 28.5494 43.295 28.5512 42.7828C28.553 42.2773 28.5292 42.1513 28.3737 41.842C27.9693 41.0376 27.2653 40.5907 26.3626 40.5656C26.0705 40.5575 25.7419 40.5778 25.6324 40.6108ZM33.145 41.2862C32.6853 41.4077 32.3163 41.6899 32.0784 42.1018C31.9014 42.4083 31.8726 42.5226 31.8743 42.9126C31.8758 43.251 31.9131 43.4347 32.0209 43.6343C32.208 43.9808 32.6902 44.3932 33.0212 44.4901C33.2167 44.5473 36.2047 44.5661 44.9906 44.565C56.1783 44.5636 56.7112 44.5583 56.9649 44.4453C57.7975 44.0745 58.1838 43.2228 57.9158 42.3488C57.8108 42.0065 57.3988 41.5628 57.014 41.3776L56.6994 41.2263L45.0824 41.2139C35.6998 41.2039 33.4038 41.2178 33.145 41.2862Z" fill="#00AEF8"></path>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_672_801" x="0" y="0" width="82" height="73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                <feOffset dy="4"></feOffset>
+                                <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+                                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.682353 0 0 0 0 0.972549 0 0 0 1 0"></feColorMatrix>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_672_801"></feBlend>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_672_801" result="shape"></feBlend>
+                              </filter>
+                            </defs>
+                          </svg>
+                        <span class="menu-text lists">Player List</span>
+                    </div>
+
+                    <div class="menu-sidebar-page logs waves-effect waves-light" data-Action="PlayerLogs">
+                        <svg width="7.4vh" height="6.85vh" viewBox="0 0 80 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_672_817)">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M28.5091 20.0621C28.2326 20.1797 27.9973 20.4005 27.8736 20.658C27.7522 20.9109 27.75 21.0825 27.75 30.3498C27.75 39.6085 27.7523 39.7889 27.8733 40.0408C28.0225 40.3516 28.2527 40.5538 28.5553 40.64C28.6796 40.6753 29.2875 40.7364 29.9062 40.7758C33.6126 41.0115 36.5433 42.1838 38.6138 44.2589C38.8518 44.4974 39.0644 44.6925 39.0863 44.6925C39.1082 44.6925 39.1189 40.3032 39.11 34.9386L39.0938 25.1847L38.7812 24.6962C37.5147 22.7164 35.6913 21.3798 33.2309 20.6277C32.2624 20.3316 31.6336 20.2075 30.5 20.0888C29.4682 19.9807 28.7239 19.9707 28.5091 20.0621ZM49.4375 20.0872C46.7089 20.3878 44.5051 21.289 42.8051 22.7994C42.3018 23.2465 41.6396 24.0383 41.2188 24.6962L40.9062 25.1847L40.89 34.9386C40.8811 40.3032 40.8917 44.6925 40.9137 44.6925C40.9356 44.6925 41.1482 44.4974 41.3862 44.2589C43.4567 42.1838 46.3874 41.0115 50.0938 40.7758C50.7125 40.7364 51.3204 40.6753 51.4447 40.64C51.7472 40.5538 51.9775 40.3516 52.1268 40.0408C52.2477 39.7889 52.25 39.6085 52.25 30.3498C52.25 21.0157 52.2487 20.9126 52.1238 20.6525C52.0543 20.508 51.8808 20.3074 51.7379 20.207C51.5018 20.0408 51.4215 20.0232 50.8486 20.0127C50.5022 20.0063 49.8672 20.0398 49.4375 20.0872ZM25.0312 24.207C24.9969 24.2192 24.8919 24.2472 24.798 24.2692C24.5689 24.3228 24.1887 24.6864 24.0844 24.9514C24.0148 25.1285 24 26.9119 24 35.1312C24 44.9977 24.0012 45.0988 24.1262 45.3591C24.2774 45.6739 24.6514 45.9536 24.9799 45.9974C25.1203 46.016 25.6696 45.9334 26.3125 45.7967C28.4471 45.3431 30.2 45.1569 32.3438 45.1563C34.2418 45.1558 35.3019 45.2558 36.7969 45.5765C37.1836 45.6595 37.5 45.7071 37.5 45.6823C37.5 45.6575 37.3102 45.473 37.0781 45.2724C35.1542 43.6085 32.76 42.762 29.4375 42.5708C28.1972 42.4994 27.8193 42.3999 27.2744 42.0012C26.6322 41.5313 26.1821 40.789 26.0603 39.9993C26.025 39.7701 26.0006 36.4711 26.0004 31.8936L26 24.1744L25.5469 24.1796C25.2976 24.1825 25.0656 24.1949 25.0312 24.207ZM53.9996 31.8846C53.9994 36.4677 53.975 39.7701 53.9397 39.9993C53.8179 40.789 53.3678 41.5313 52.7256 42.0012C52.1807 42.3999 51.8028 42.4994 50.5625 42.5708C47.24 42.762 44.8458 43.6085 42.9219 45.2724C42.6899 45.473 42.5 45.6616 42.5 45.6915C42.5 45.7213 42.5902 45.7182 42.7004 45.6846C43.0497 45.5782 44.7546 45.2945 45.4688 45.2239C45.8469 45.1866 46.8312 45.1562 47.6562 45.1564C49.7999 45.1569 51.5526 45.343 53.6875 45.7967C54.3304 45.9334 54.8797 46.016 55.0201 45.9974C55.3486 45.9536 55.7226 45.6739 55.8738 45.3591C55.9988 45.0988 56 44.9976 56 35.1377C56 28.263 55.9794 25.1212 55.9335 24.9921C55.8498 24.7565 55.5873 24.4592 55.3441 24.3244C55.2316 24.262 54.9261 24.2078 54.5784 24.1885L54 24.1563L53.9996 31.8846Z" fill="#F87700"></path>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_672_817" x="0" y="0" width="80" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                <feOffset dy="4"></feOffset>
+                                <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+                                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.972549 0 0 0 0 0.466667 0 0 0 0 0 0 0 0 1 0"></feColorMatrix>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_672_817"></feBlend>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_672_817" result="shape"></feBlend>
+                              </filter>
+                            </defs>
+                          </svg>
+                        <span class="menu-text log">Player Logs</span>
+                    </div>
+
+                    <div class="menu-sidebar-page options waves-effect waves-light" data-Action="Options">
+                        <svg width="7.31vh" height="7.31vh" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <filter id="filter0_d_672_827" x="0" y="0" width="79" height="79" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                <feOffset dy="4"></feOffset>
+                                <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+                                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.427451 0 0 0 0 0.972549 0 0 0 0 0 0 0 0 1 0"></feColorMatrix>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_672_827"></feBlend>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_672_827" result="shape"></feBlend>
+                              </filter>
+                            </defs>
+                            <g filter="url(#filter0_d_672_827)">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M32.0238 20.0233C31.797 20.0839 31.519 20.3469 31.4462 20.5698C31.4062 20.6921 31.3427 21.0406 31.305 21.3444L31.2365 21.8966L30.8195 22.0383C30.5902 22.1162 30.1734 22.2919 29.8933 22.4288L29.384 22.6775L29.0083 22.3765C28.4311 21.9143 28.2424 21.8162 27.93 21.8159C27.5753 21.8156 27.3872 21.9526 26.5293 22.8367C25.4793 23.9186 25.4605 24.0912 26.2796 25.1273L26.6126 25.5485L26.3669 26.1266C26.2318 26.4445 26.0902 26.829 26.0523 26.981C26.0143 27.133 25.9612 27.2711 25.9342 27.288C25.9072 27.3048 25.6003 27.3563 25.2522 27.4024C24.514 27.5003 24.3271 27.5771 24.1383 27.8602C24.0051 28.0599 23.9998 28.1162 24 29.3271C24.0002 30.7337 24.0343 30.872 24.4312 31.0792C24.5768 31.1551 25.6785 31.3447 26.0038 31.3497C26.0235 31.35 26.0729 31.4671 26.1136 31.61C26.1544 31.7529 26.299 32.1095 26.435 32.4024L26.6824 32.935L26.416 33.2757C25.4242 34.5444 25.4266 34.5774 26.594 35.7731C27.8251 37.0341 27.9231 37.0514 29.0077 36.1976L29.5039 35.807L29.916 36.0148C30.1427 36.1291 30.5121 36.2837 30.7369 36.3584C30.9618 36.4331 31.1459 36.5126 31.1462 36.5351C31.1506 36.8637 31.3384 37.9787 31.4143 38.1268C31.6194 38.5271 31.7573 38.5619 33.1441 38.5619C34.8385 38.5619 34.8969 38.5244 35.0518 37.339C35.1017 36.9572 35.1426 36.6248 35.1426 36.6004C35.1426 36.576 35.3265 36.4961 35.5513 36.4229C35.7762 36.3498 36.1615 36.1961 36.4077 36.0815C36.6539 35.9669 36.8808 35.873 36.912 35.873C36.9433 35.873 37.1642 36.034 37.4031 36.2306C38.0774 36.7859 38.3433 36.8832 38.7552 36.7251C38.9517 36.6497 40.3603 35.2655 40.5432 34.9681C40.7017 34.7104 40.6989 34.3413 40.5365 34.0636C40.4681 33.9466 40.2614 33.6602 40.0771 33.4271L39.7421 33.0033L39.9484 32.5893C40.0618 32.3616 40.2278 31.967 40.3173 31.7124L40.4798 31.2495L41.082 31.1782C41.8085 31.0922 42.043 31.0011 42.234 30.7307C42.3763 30.5294 42.3793 30.4984 42.3793 29.2416C42.3793 28.0118 42.3737 27.9501 42.2443 27.767C42.054 27.4978 41.8035 27.3983 41.1009 27.3129L40.4885 27.2384L40.3832 26.8954C40.3252 26.7067 40.1715 26.3217 40.0417 26.0397C39.9118 25.7577 39.8056 25.5189 39.8056 25.5089C39.8056 25.4989 39.9654 25.2877 40.1609 25.0395C40.3563 24.7914 40.5471 24.5301 40.5848 24.4589C40.6725 24.2936 40.6732 23.8641 40.5863 23.691C40.4868 23.4933 39.0163 22.0057 38.8128 21.897C38.6282 21.7985 38.3297 21.7758 38.1163 21.8441C38.0464 21.8666 37.7696 22.0595 37.5012 22.2729L37.0133 22.6609L36.5472 22.427C36.1992 22.2522 35.3319 21.9119 35.2238 21.9077C35.2186 21.9075 35.1822 21.6323 35.143 21.2962C35.061 20.5939 34.9624 20.3407 34.6961 20.149C34.5172 20.0202 34.4413 20.012 33.3258 20.0018C32.6763 19.9958 32.0904 20.0054 32.0238 20.0233ZM34.2621 26.1172C34.8163 26.3201 35.1679 26.5473 35.5663 26.9594C36.7902 28.2256 36.777 30.2298 35.5366 31.5003C35.0739 31.9742 34.6214 32.2359 33.9826 32.3989C31.9809 32.9098 29.9951 31.3383 29.9951 29.2434C29.9951 28.3309 30.2959 27.5773 30.9127 26.9451C31.3054 26.5426 31.6116 26.3311 32.0601 26.1527C32.7419 25.8815 33.5818 25.8679 34.2621 26.1172ZM46.5276 29.5798C45.9923 29.634 45.819 29.6956 45.6329 29.8977C45.4527 30.0933 45.377 30.3748 45.377 30.8494V31.2356L44.9701 31.4219C44.7463 31.5242 44.4181 31.7017 44.2406 31.8163L43.918 32.0246L43.6634 31.8486C43.3029 31.5994 42.9202 31.4114 42.7734 31.4114C42.4846 31.4114 42.2292 31.601 41.7225 32.1915C40.8739 33.1806 40.8369 33.4409 41.4454 34.1365C41.6426 34.3621 41.8039 34.5768 41.8038 34.6139C41.8036 34.6509 41.7364 34.8737 41.6544 35.1091C41.5724 35.3444 41.4881 35.6508 41.4671 35.7899L41.4289 36.0428L41.0563 36.114C40.3299 36.2528 40.0806 36.4083 39.927 36.8186C39.8334 37.0683 39.9574 38.5119 40.0976 38.806C40.235 39.0943 40.5478 39.2956 40.8592 39.2963C40.9958 39.2965 41.2528 39.3144 41.4302 39.3359C41.7494 39.3746 41.7545 39.3785 41.8902 39.6883C41.9658 39.8606 42.0999 40.1173 42.1883 40.2586C42.2767 40.4 42.349 40.5441 42.349 40.5787C42.349 40.6134 42.2196 40.8382 42.0614 41.0784C41.7985 41.4774 41.7737 41.5465 41.7737 41.8804V42.2459L42.1976 42.6395C42.9731 43.3596 43.295 43.574 43.6005 43.574C43.9373 43.574 44.0399 43.5192 44.5214 43.0816L44.9074 42.7309L45.127 42.8269C45.2478 42.8797 45.5511 42.9835 45.8009 43.0575L46.2551 43.192L46.3369 43.5511C46.5072 44.2979 46.5418 44.3923 46.7064 44.5585C46.9462 44.8005 47.1212 44.8262 48.0197 44.752C49.2775 44.6481 49.4659 44.4943 49.5348 43.5149L49.5745 42.9511L50.0041 42.7535C50.2403 42.6448 50.5458 42.4844 50.6829 42.397L50.9322 42.2382L51.3304 42.5077C52.125 43.0457 52.4623 42.9845 53.1389 42.1795C53.7595 41.4412 53.8552 41.2771 53.8552 40.951C53.8552 40.6282 53.7826 40.4978 53.3536 40.0492L53.0512 39.7332L53.2039 39.3464C53.2879 39.1336 53.3911 38.8025 53.4333 38.6106L53.51 38.2615L53.8491 38.1931C54.4542 38.0711 54.647 37.9938 54.7975 37.8134C55.0133 37.5544 55.033 37.3985 54.9657 36.4774C54.9162 35.7991 54.8805 35.6056 54.7727 35.4296C54.613 35.1688 54.322 35.0186 53.9671 35.0138C53.8223 35.0119 53.5991 34.9913 53.4712 34.968C53.2574 34.9291 53.2266 34.8971 53.0912 34.5727C53.0101 34.3786 52.8613 34.0846 52.7607 33.9194L52.5776 33.6191L52.8552 33.1977C53.3553 32.4387 53.2943 32.1614 52.4719 31.4569C51.6962 30.7923 51.592 30.7288 51.2772 30.7288C50.9714 30.7288 50.8166 30.8132 50.399 31.2074L50.1192 31.4716L49.754 31.3218C49.5532 31.2394 49.2103 31.1268 48.9921 31.0715L48.5953 30.9709L48.5207 30.5495C48.3823 29.768 48.1033 29.5118 47.4057 29.5255C47.1725 29.53 46.7774 29.5545 46.5276 29.5798ZM48.1215 34.4976C48.6406 34.634 48.9378 34.8104 49.3467 35.2244C49.9703 35.856 50.2142 36.579 50.0951 37.4434C50.009 38.0679 49.7886 38.5155 49.3462 38.964C48.4076 39.9156 47.0883 40.0345 45.9475 39.27C45.5877 39.0289 45.1528 38.4518 44.9767 37.9816C44.8005 37.5113 44.8188 36.5642 45.0127 36.1175C45.5691 34.8356 46.8562 34.1649 48.1215 34.4976ZM35.7042 38.6263C35.281 38.7176 35.0721 38.9904 34.9888 39.5604C34.9611 39.7503 34.9106 39.8674 34.8473 39.8889C34.7932 39.9073 34.5189 40.0149 34.2377 40.128C33.7426 40.3271 33.722 40.3302 33.5803 40.2272C32.9793 39.7903 32.7143 39.7476 32.293 40.0195C31.9712 40.2272 31.4704 40.7575 31.3871 40.9788C31.2733 41.2809 31.3173 41.5297 31.5396 41.8408C31.8425 42.2644 31.8417 42.2598 31.6744 42.6442C31.5908 42.8362 31.4912 43.0928 31.4531 43.2143C31.3857 43.4295 31.3747 43.436 31.0241 43.4681C30.2716 43.537 30.0555 43.8356 30.0559 44.8056C30.0561 45.3321 30.0766 45.4721 30.1782 45.6404C30.3196 45.8744 30.7118 46.0766 31.0281 46.0786C31.3041 46.0803 31.4168 46.1734 31.5105 46.4772C31.552 46.6117 31.6384 46.8269 31.7025 46.9555L31.8189 47.1893L31.6128 47.4444C31.3213 47.8053 31.2668 47.9301 31.2668 48.2364C31.2668 48.551 31.4349 48.8172 31.922 49.2742C32.4937 49.8106 32.8157 49.8183 33.4555 49.311L33.676 49.1361L34.0611 49.3102C34.2729 49.406 34.5176 49.5138 34.6051 49.5498C34.7424 49.6063 34.7699 49.6638 34.8073 49.9715C34.8625 50.4258 34.9873 50.692 35.2257 50.8637C35.3952 50.9857 35.488 51 36.1115 51C36.7349 51 36.8278 50.9857 36.9973 50.8637C37.2292 50.6967 37.3572 50.4314 37.414 49.9993C37.4452 49.762 37.4865 49.6632 37.5628 49.6431C37.6209 49.6278 37.8902 49.525 38.1613 49.4146C38.5641 49.2507 38.6664 49.229 38.7211 49.2955C38.7578 49.3402 38.9126 49.4601 39.0649 49.5619C39.4411 49.8134 39.8122 49.8177 40.1447 49.5741C40.5711 49.2618 41.0018 48.7338 41.0461 48.4688C41.0914 48.1982 40.9576 47.8348 40.6955 47.517L40.545 47.3344L40.712 46.9975C40.8038 46.8122 40.9121 46.5574 40.9525 46.4314C41.0302 46.1895 41.0507 46.1789 41.5789 46.1097C41.7968 46.0812 41.9183 46.0216 42.0695 45.8689C42.3044 45.6319 42.349 45.4542 42.349 44.7552C42.349 44.2079 42.2655 43.95 42.0236 43.7499C41.8841 43.6346 41.479 43.5129 41.2345 43.5129C41.1052 43.5129 41.0686 43.4687 40.9945 43.2226C40.9463 43.0629 40.8482 42.8008 40.7765 42.6401L40.6461 42.348L40.8226 42.1206C41.0789 41.7906 41.1379 41.6545 41.1376 41.3931C41.1374 41.1075 41.0146 40.9044 40.547 40.4158C40.0009 39.8452 39.5777 39.7881 39.0476 40.2133C38.9224 40.3137 38.8093 40.3958 38.7963 40.3958C38.7833 40.3958 38.6167 40.3171 38.4261 40.2209C38.2356 40.1247 37.9793 40.0131 37.8566 39.973C37.6232 39.8968 37.6186 39.8873 37.5338 39.3184C37.4876 39.0088 37.2094 38.7002 36.9387 38.6585C36.5728 38.6021 35.8983 38.5845 35.7042 38.6263ZM36.9894 42.7236C37.6942 42.9897 38.245 43.6995 38.3494 44.4762C38.554 45.9981 37.1093 47.2725 35.6609 46.8476C34.7102 46.5686 34.093 45.7633 34.0899 44.7976C34.0882 44.2611 34.1732 43.9684 34.4568 43.5337C34.9881 42.7196 36.0658 42.3748 36.9894 42.7236Z" fill="#6DF800"></path>
+                            </g>
+                          </svg>
+                        <span class="menu-text option">Options</span>
+                    </div>
+
+                    <!-- Lower -->
+                    <!-- <div class="menu-sidebar-page admin lower waves-effect waves-light" data-Action="DevMode">
+                        <i class="fa-solid fa-terminal" style="font-size: 1.6em; color: #7e111f;"></i>
+                        <div style="height: 2.4vh; width: 2.4vh; bottom: 0.2vh" class="box-glow devv"></div>
+                        <span class="menu-text devmode">Dev Mode</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="menu-checkmark-wrapper">
+                <div class="menu-checkmark-container"></div>
+            </div>
+            <div class="menu-crossmark-wrapper">
+                <div class="menu-crossmark-container"></div>
+            </div>
+            <!-- Pages -->
+            
+            
+            <div class="menu-pages">
+                <!-- Commands -->
+                <div class="menu-page" data-Page="Commands">
+                    <div class="menu-page-commands-header-categories">
+
+                        <div class="menu-page-commands-header-category active under" data-Type="All"> <div class="menu-page-commands-header-category-title"><p>All</p></div> </div>
+                        <div class="menu-page-commands-header-category" data-Type="Player"> <div class="menu-page-commands-header-category-title"><p>Player</p></div> </div>
+                        <div class="menu-page-commands-header-category" data-Type="Utility"> <div class="menu-page-commands-header-category-title"><p>Utility</p></div> </div>
+                        <div class="menu-page-commands-header-category" data-Type="User"> <div class="menu-page-commands-header-category-title"><p>User</p></div> </div>
+                        <!-- <div class="menu-page-commands-header-category" data-Type="Fun"> <div class="menu-page-commands-header-category-title"><p>Fun</p></div> </div> -->
+                    </div>
+                    
+                    <div class="menu-page-commands-search">
+                        <input type="text" name="action-search" id="action-search" placeholder="Search">
+                        <i class="fas fa-search search-icon"></i>
+                        <hr>
+                        <div class="menu-page-title">Administrator Panel</div>
+                        <div class="menu-page-title-sub">All Commands</div>
+                        <div class="exit"></div>
+                    </div>
+
+
+
+                    
+                    <style>
+                        .menu-page-commands-search {
+                            left: 42vh;
+                            top: 0.75vh;
+                            margin-bottom: 45px;
+                            width: 230px;
+                        }
+                        .search-icon {
+                            position: absolute;
+                            top: 0.3vh;
+                            left: 220px;
+                            color: #5C5E66 ;
+                        }
+                        .menu-page-title {
+                            position: fixed;
+                            top: 5.3vh;
+                            width: max-content;
+                            left: 5vh;
+                            font-size: 1.2em;
+                            color: #00F6B8;
+                            text-shadow: 0 0 8px rgba(0, 246, 184, 0.65);
+                            font-family: Gilroy;
+                            font-weight: 600;
+                        }
+
+                        .menu-page-title-sub {
+                            position: fixed;
+                            top: 7.7vh;
+                            width: max-content;
+                            left: 5vh;
+                            font-size: 0.9em;
+                            color: #879394;
+                            text-shadow: 0 0 8px rgba(135, 147, 148, 0.6);
+                            font-family: Gilroy;
+                            font-weight: 500;
+                        }
+
+                        .menu-page-line {
+                            position: fixed;
+                            top: 10.1vh;
+                            width: 92.8vh;
+                            height: 0.1vh;
+                            left: 6vh;
+                            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(168, 168, 170, 0.5), rgba(255, 255, 255, 0));
+                        }
+
+                        .admin-container {
+                            position: absolute;
+                            top: 5vh;
+                            right: 4vh;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            width: max-content;
+                            color: #ffffff8c;
+                            padding: 0.4vh;
+                        }
+                        .admin-box {
+                            display: flex;
+                        }
+                        .admin-container > .admin-box {
+                            margin: 0.5vh;
+                            border: 0.1vh solid rgba(255,255,255,.08);
+                        }
+                        .admin-container > .admin-box > div {
+                            width: max-content;
+                            text-align: center;
+                            padding: 0.4vh 0.9vh;
+                            font-size: 1.1vh;
+                            font-family: Gilroy;
+                            font-weight: 400;
+                        }
+                        .admin-container > .admin-box > div:first-child {
+                            border-right: none;
+                        }
+                        .admin-container > .admin-box > div:last-child {
+                            border-left: none;
+                            background-color: rgba(255,255,255,.08);
+                        }
+                      </style>
+
+                    <div class="menu-current-target"></div>
+                    <div class="admin-menu-items">
+                        <!-- Auto Gen -->
+                    </div>
+                </div>
+
+                <!-- PlayerList -->
+                <div class="menu-page" data-Page="PlayerList">
+                    <div class="menu-page-title">Administrator Panel</div>
+                    <div class="menu-page-title-sub">All Players</div>
+                    <div class="menu-page-player-list-search"> <input type="text" name="list-serverid" id="list-serverid" placeholder="Search with ServerId"> <hr> </div>
+                    <div class="menu-page-player-list-search"> <input type="text" name="list-steamsearch" id="list-steamsearch" placeholder="Search with SteamId"> <hr> </div>
+                    <div class="menu-current-target"></div>
+                    <div class="admin-menu-players">
+                        <!-- Auto Gen -->
+                    </div>
+                </div>
+
+                <!-- Recent Bans -->
+                <div class="menu-page" data-Page="RecentBans">
+                    <div class="menu-page-recentbans-topbar">
+                        <div class="menu-page-recentbans-list-search"> <input type="text" name="banslist-discordid" id="banslist-discordid" placeholder="Search with Discord"> <hr> </div>
+                        <div class="menu-page-recentbans-list-search"> <input type="text" name="banslist-license" id="banslist-license" placeholder="Search with License / Steam"> <hr> </div>
+                        <div class="menu-page-recentbans-types">
+                            <!-- Auto Gen -->
+                        </div>
+                    </div>
+                    <div class="no-bans"><i class="fa-regular fa-ban"></i><p>Sorry, there are no bans.</p></div>
+                    <div class="admin-menu-bans">
+                        <!-- Auto Gen -->
+                    </div>
+                </div>
+
+                <!-- Player Logs -->
+                <div class="menu-page" data-Page="PlayerLogs">
+                    <div class="menu-page-title">Administrator Panel</div>
+                    <div class="menu-page-title-sub">Player Logs</div>
+                    <div class="menu-page-playerlogs-list-search"> <input type="text" name="log-type" id="log-type" placeholder="Search with Type"> <hr> </div>
+                    <div class="menu-page-playerlogs-list-search"> <input type="text" name="log-steam" id="log-steam" placeholder="Search with Steam"> <hr> </div>
+                    <div class="menu-page-playerlogs-list-search"> <input type="text" name="log-cid" id="log-cid" placeholder="Search with Cid"> <hr> </div>
+                    <div class="admin-menu-logs">
+                        <div class="logs-availability"><i class="fa-regular fa-face-frown-slight"></i> <p>Sorry, logs are not available in this size.</p></div>
+                        <div class="admin-menu-logs-grid" style="display: none;">
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Type</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-types">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Steam</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-steam">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Log</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-desc">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Date</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-date">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Cid</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-cid">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                            <div class="admin-menu-logs-col">
+                                <div class="admin-menu-logs-col-title">Data</div>
+                                <div class="admin-menu-logs-col-contents" id="logs-data">
+                                    <!-- Auto Gen -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chats -->
+                <div class="menu-page" data-Page="Chats">
+                    <div class="menu-page-chats-header-categories">
+                        <div class="menu-page-chats-header-category active" data-Type="Staff"> <div class="menu-page-chats-header-category-title"><p>Staffchat</p></div> </div>
+                        <div class="menu-page-chats-header-category" data-Type="Reports"> <div class="menu-page-chats-header-category-title"><p>Reports</p></div> </div>
+                    </div>
+
+                    <div class="admin-menu-staffchat">
+                        <div class="admin-menu-staff-chat-list">
+                            <!-- Auto Gen -->
+                        </div>
+                        <div class="ui-styles-chat-input" data-Content="Staff">
+                            <input type="text" placeholder="Message" spellcheck="false">
+                            <i class="fa-solid fa-paper-plane" id="chat-send"></i>
+                        </div>
+                    </div>
+
+                    <div class="admin-menu-reports">
+                        <!-- Auto Gen -->
+                    </div>
+
+                    <div class="admin-menu-opened-report">
+                        <div class="admin-menu-opened-report-header">
+                            <div class="admin-menu-opened-report-header-button left" data-Action="Delete"><i class="fa-solid fa-trash-can"></i></div>
+                            <div class="admin-menu-opened-report-header-title"><p>Report <strong># <span id="report-id">69420</span></strong></p></div>
+                            <div class="admin-menu-opened-report-header-button right" data-Action="Close"><i class="fa-regular fa-times"></i></div>
+                        </div>
+                        <div class="admin-menu-opened-report-chat-list">
+                            <!-- Auto Gen -->
+                        </div>
+                        <div class="ui-styles-chat-input" data-Content="Reports">
+                            <input type="text" placeholder="Message" spellcheck="false">
+                            <i class="fa-solid fa-paper-plane" id="chat-send"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="no-reports"><i class="fa-solid fa-flag"></i><p>No reports found.</p></div>
+                </div>
+
+                <!-- Options -->
+                <div class="menu-page" data-Page="Options">
+                    <div class="menu-page-title">Administrator Panel</div>
+                    <div class="menu-page-title-sub">Some random settings</div>
+                    <div class="menu-page-options-spinner">
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                        <p>Loading Options</p>
+                    </div>
+                    <div class="menu-page-options-items">
+                        <div class="menu-page-options-item waves-effect waves-light">
+                            <label id="LargeDefault" class="ui-styles-checkbox">
+                                <span>Large Menu Default</span>
+                                <input type="checkbox" focus>
+                                <div class="ui-styles-checkbox-input" style="margin-left: 1.92vw;"></div>
+                            </label>
+                        </div>
+                        <div class="menu-page-options-item waves-effect waves-light">
+                            <label id="BindOpen" class="ui-styles-checkbox">
+                                <span>Open menu with keybind</span>
+                                <input type="checkbox" focus>
+                                <div class="ui-styles-checkbox-input"></div>
+                            </label>
+                        </div>
+                        <div class="menu-page-options-item waves-effect waves-light">
+                            <label id="Tooltips" class="ui-styles-checkbox">
+                                <span>Show Tooltips</span>
+                                <input type="checkbox" focus>
+                                <div class="ui-styles-checkbox-input" style="margin-left: 4.15vw;"></div>
+                            </label>
+                        </div>
+                        <div class="menu-page-options-item waves-effect waves-light">
+                            <label id="Resizer" class="ui-styles-checkbox">
+                                <span>Show Resizer</span>
+                                <input type="checkbox" focus>
+                                <div class="ui-styles-checkbox-input" style="margin-left: 4.4vw;"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pinned Players -->
+                <div class="menu-pinned-players">
+                    <div class="menu-pinned-players-header"><strong>Pinned</strong> Targets</div>
+                    <div class="menu-pinned-players-list">
+                        <!-- Auto Gen -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- JS -->
+    <script src="./js/needs/jquery.min.js"></script>
+    <script src="./js/needs/jquery.color.min.js"></script>
+    <script src="./js/needs/jquery-ui.min.js"></script>
+    <script src="./js/needs/materialize.min.js"></script>
+    <script src="./js/needs/popper.min.js"></script>
+    <script src="./js/needs/tippy-bundle.umd.min.js"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+    <script src="./js/utils.js" type="text/javascript"></script>
+    <script src="./js/sidebar.js" type="text/javascript"></script>
+    <script src="./js/pages/commands.js" type="text/javascript"></script>
+    <script src="./js/pages/playerlist.js" type="text/javascript"></script>
+    <script src="./js/pages/recentbans.js" type="text/javascript"></script>
+    <script src="./js/pages/playerlogs.js" type="text/javascript"></script>
+    <script src="./js/pages/chats.js" type="text/javascript"></script>
+    <script src="./js/pages/options.js" type="text/javascript"></script>
+</html>
+
