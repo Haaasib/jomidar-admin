@@ -1,3 +1,9 @@
+## Support
+
+https://discord.gg/9m2KTFskjx
+
+https://discord.gg/9m2KTFskjx
+
 ## Installation
 Download then drag and drop the script into your folder. Make sure to run the SQL.
 
