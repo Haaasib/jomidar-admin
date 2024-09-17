@@ -5,47 +5,47 @@ BlipsEnabled, NamesEnabled, BlipData = false, false, {}
 -- [ Events ] --
 
 RegisterNetEvent("Admin:Bennys", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/open-bennys', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Kill", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/kill', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Set:Environment", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/set-environment', Result['weather'], Result['hour'], Result['minute'])
 end)
 
 RegisterNetEvent("Admin:Delete:Area", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/delete-area', Result['type'], Result['radius'])
 end)
 
 RegisterNetEvent("Admin:Infinite:Ammo", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/toggle-infinite-ammo', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Infinite:Stamina", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/toggle-infinite-stamina', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Cloak", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/toggle-cloak', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Godmode", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/toggle-godmode', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Toggle:Noclip', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     SendNUIMessage({
         Action = "SetItemEnabled",
@@ -56,7 +56,7 @@ RegisterNetEvent('Admin:Toggle:Noclip', function(Result)
 end)
 
 RegisterNetEvent('Admin:Fix:Vehicle', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     if IsPedInAnyVehicle(PlayerPedId(), false) then
         SetVehicleFixed(GetVehiclePedIsIn(PlayerPedId(), true))
@@ -67,7 +67,7 @@ RegisterNetEvent('Admin:Fix:Vehicle', function(Result)
 end)
 
 RegisterNetEvent('Admin:Delete:Vehicle', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     if IsPedInAnyVehicle(PlayerPedId(), false) then
         DeleteVehicle(GetVehiclePedIsIn(PlayerPedId(), true))
@@ -78,19 +78,19 @@ RegisterNetEvent('Admin:Delete:Vehicle', function(Result)
 end)
 
 RegisterNetEvent('Admin:Spawn:Vehicle', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     TriggerEvent('QBCore:Command:SpawnVehicle', Result['model'])
 end)
 
 RegisterNetEvent('Admin:Teleport:Marker', function(Result)
-     if not IsPlayerAdmin() then return end
+    
     TriggerEvent('j0-admin/client/force-close')
     TriggerEvent('QBCore:Command:GoToMarker')
 end)
 
 RegisterNetEvent('Admin:Teleport:Coords', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     if Result['x-coord'] ~= '' and Result['y-coord'] ~= '' and Result['z-coord'] ~= '' then
         TriggerEvent('j0-admin/client/force-close')
         SetEntityCoords(PlayerPedId(), tonumber(Result['x-coord']), tonumber(Result['y-coord']), tonumber(Result['z-coord']))
@@ -98,39 +98,39 @@ RegisterNetEvent('Admin:Teleport:Coords', function(Result)
 end)
 
 RegisterNetEvent('Admin:Teleport', function(Result)
-     if not IsPlayerAdmin() then return end
+    
     TriggerEvent('j0-admin/client/force-close')
     TriggerServerEvent('j0-admin/server/teleport-player', Result['player'], Result['type'])
 end)
 
 RegisterNetEvent("Admin:Chat:Say", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/chat-say', Result['message'])
 end)
 
 RegisterNetEvent('Admin:Open:Clothing', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     TriggerServerEvent('j0-admin/server/open-clothing', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Revive:Radius', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/revive-in-distance', Result['radius'])
 end)
 
 RegisterNetEvent('Admin:Revive', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/revive-target', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Remove:Stress', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/remove-stress', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Change:Model', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     if Result['model'] ~= '' then
         local Model = GetHashKey(Result['model'])
         if IsModelValid(Model) then
@@ -140,94 +140,94 @@ RegisterNetEvent('Admin:Change:Model', function(Result)
 end)
 
 RegisterNetEvent('Admin:Reset:Model', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/reset-skin', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Armor', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/set-armor', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Food:Drink', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/set-food-drink', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Request:Gang', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/request-gang', Result['player'], Result['gang'] ~= '' and Result['gang'] or 'none')
 end)
 
 RegisterNetEvent('Admin:Request:Job', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/request-job', Result['player'], Result['job'] ~= '' and Result['job'] or 'unemployed')
 end)
 
 RegisterNetEvent("Admin:Drunk", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/drunk', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Animal:Attack", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/animal-attack', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Set:Fire', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/set-fire', Result['player'])
 end)
 
 RegisterNetEvent('Admin:Fling:Player', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/fling-player', Result['player'])
 end)
 
 RegisterNetEvent("Admin:Freeze:Player", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/freeze-player', Result['player'])
 end)
 
 RegisterNetEvent('Admin:SetMoney', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/set-money', Result['player'], Result['moneytype'], Result['amount'])
 end)
 
 RegisterNetEvent('Admin:GiveMoney', function(Result)
-    if not IsPlayerAdmin() then return end
+   
 
     TriggerServerEvent('j0-admin/server/give-money', Result['player'], Result['moneytype'], Result['amount'])
 end)
 
 RegisterNetEvent('Admin:GiveItem', function(Result)
-    if not IsPlayerAdmin() then return end
+   
 
     TriggerServerEvent('j0-admin/server/give-item', Result['player'], Result['item'], Result['amount'])
 end)
 
 RegisterNetEvent('Admin:Ban', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/ban-player', Result['player'], Result['expire'], Result['reason'])
 end)
 
 RegisterNetEvent('Admin:Unban', function(Result)
-     if not IsPlayerAdmin() then return end
+    
     TriggerServerEvent("j0-admin/server/unban-player", Result['player'])
 end)
 
 RegisterNetEvent('Admin:Kick', function(Result)
-     if not IsPlayerAdmin() then return end
+    
     TriggerServerEvent('j0-admin/server/kick-player', Result['player'], Result['reason'])
 end)
 
 RegisterNetEvent('Admin:Kick:All', function(Result)
-    if not IsPlayerAdmin() then return end
+   
    TriggerServerEvent('j0-admin/server/kick-all-players', Result['reason'])
 end)
 
 RegisterNetEvent("Admin:Copy:Coords", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     local Coords, Heading = GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId())
     local X, Y, Z, H = roundDecimals(Coords.x, 2), roundDecimals(Coords.y, 2), roundDecimals(Coords.z, 2), roundDecimals(Heading, 2)
     SendNUIMessage({
@@ -248,12 +248,12 @@ RegisterNetEvent("Admin:Copy:Coords", function(Result)
 end)
 
 RegisterNetEvent("Admin:Fart:Player", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerServerEvent('j0-admin/server/play-sound', Result['player'], Result['fart'])
 end)
 
 RegisterNetEvent('Admin:Toggle:PlayerBlips', function()
-    if not IsPlayerAdmin() then return end
+   
     BlipsEnabled = not BlipsEnabled
     TriggerServerEvent('j0-admin/server/toggle-blips')
     SendNUIMessage({
@@ -267,7 +267,7 @@ RegisterNetEvent('Admin:Toggle:PlayerBlips', function()
 end)
 
 RegisterNetEvent('Admin:Toggle:PlayerNames', function()
-    if not IsPlayerAdmin() then return end
+   
     NamesEnabled = not NamesEnabled
     SendNUIMessage({
         Action = "SetItemEnabled",
@@ -298,7 +298,7 @@ RegisterNetEvent('Admin:Toggle:PlayerNames', function()
 end)
 
 RegisterNetEvent('Admin:Toggle:Spectate', function(Result)
-    if not IsPlayerAdmin() then return end
+   
     if not SpectateEnabled then
         TriggerServerEvent('j0-admin/server/start-spectate', Result['player'])
     else
@@ -308,7 +308,7 @@ RegisterNetEvent('Admin:Toggle:Spectate', function(Result)
 end)
 
 RegisterNetEvent("Admin:OpenInv", function(Result)
-    if not IsPlayerAdmin() then return end
+   
     TriggerEvent('j0-admin/client/force-close')
     TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", Result['player'])
 end)
@@ -390,12 +390,12 @@ RegisterNetEvent("j0-admin/client/play-sound", function(Sound)
 end)
 
 RegisterNetEvent('j0-admin/client/DeletePlayerBlips', function()
-    if not IsPlayerAdmin() then return end
+   
     DeletePlayerBlips()
 end)
 
 RegisterNetEvent('j0-admin/client/UpdatePlayerBlips', function(Data)
-    if not IsPlayerAdmin() then return end
+   
     BlipData = Data
 end)
 
