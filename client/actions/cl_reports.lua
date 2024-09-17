@@ -44,8 +44,7 @@ RegisterNetEvent("j0-admin/client/reply-report", function(Message, Time)
 end)
 
 RegisterNetEvent('j0-admin/client/sync-chat-data', function(Type, Data, UpdateDelay)
-    if not IsPlayerAdmin() then return end
-    if Type == 'Staffchat' then Config.StaffChat = Data else Config.Reports = Data end
+        if Type == 'Staffchat' then Config.StaffChat = Data else Config.Reports = Data end
     if UpdateDelay then
         SetTimeout(UpdateDelay, function()
             SendNUIMessage({

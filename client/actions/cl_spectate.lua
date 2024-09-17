@@ -125,8 +125,7 @@ end
 -- [ Events ] --
 
 RegisterNetEvent('QBCore/client/specPlayer', function(targetServerId, coords)
-    if not IsPlayerAdmin() then return end
-
+    
     local spectatorPed = PlayerPedId()
     lastSpectateLocation = GetEntityCoords(spectatorPed)
 

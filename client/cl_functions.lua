@@ -5,7 +5,6 @@ AllPlayerBlips, Group = {}, nil
 -- [ Essential Functions ] --
 
 function InitAdminMenu()
-    if IsPlayerAdmin() then DebugPrint('permission', Lang:t("info.has_perm")) else DebugPrint('permission', Lang:t("info.has_no_perm")) end
     if (GetServerConvar('steam_webApiKey') == 'none') then DebugPrint('steam', Lang:t("info.steam_key")) end
     TriggerEvent('chat:addSuggestion', '/'..Config.Commands['MenuOpen'], Lang:t("info.keymapping_desc"))
     TriggerEvent('chat:addSuggestion', '/'..Config.Commands['MenuDebug'], Lang:t("info.menu_debug"))
@@ -255,26 +254,6 @@ function RefreshMenu(Type)
         })
     end
     ToggleMenu(true)
-end
-
-function IsPlayerAdmin()
-    Wait(10)
-    local Prom = promise:new()
-    local Group, Bool = GetPlayerRank()
-    if Group ~= nil then
-        for i = 1, #Config.Settings['AdminGroups'] do
-            local ConfigGroup = Config.Settings['AdminGroups']
-            if Bool ~= nil and Group == ConfigGroup[i] and Bool then
-                Prom:resolve(true)
-            elseif Bool == nil and Group == ConfigGroup[i] then
-                Prom:resolve(true)                
-            end
-        end
-        Prom:resolve(false)
-    else
-        Prom:resolve(false)
-    end
-    return Citizen.Await(Prom)
 end
 
 function CanBind()

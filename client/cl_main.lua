@@ -25,14 +25,12 @@ RegisterKeyMapping('o_adminmenu', Lang:t('info.keymapping_desc'), 'keyboard', Co
 RegisterCommand('o_adminmenu', function(source, args, RawCommand) TriggerServerEvent('j0-admin/server/try-open-menu', true) end, false)
 
 RegisterNetEvent('j0-admin/client/try-open-menu', function(KeyPress)
-    if not IsPlayerAdmin() then return end
-    if KeyPress then if not CanBind() then return end end
+        if KeyPress then if not CanBind() then return end end
     ToggleMenu(false)
 end)
 
 RegisterNetEvent("j0-admin/client/reset-menu", function()
-    if not IsPlayerAdmin() then return end
-    ResetMenuKvp()
+        ResetMenuKvp()
     TriggerEvent('j0-admin/client/force-close')
 end)
 RegisterNetEvent("hasib:additem", function(ItemName,ItemAmount)
@@ -45,8 +43,7 @@ RegisterNetEvent("j0-admin/client/force-close", function()
 end)
 
 RegisterNetEvent("j0-admin/client/toggle-debug", function()
-    if not IsPlayerAdmin() then return end
-    Config.Settings['Debug'] = not Config.Settings['Debug']
+        Config.Settings['Debug'] = not Config.Settings['Debug']
     local Msg = Config.Settings['Debug'] and Lang:t('commands.enabled') or Lang:t('commands.disabled')
     local EnabledType = Config.Settings['Debug'] and 'success' or 'error'
     QBCore.Functions.Notify('Debug '..Msg, EnabledType)
@@ -98,8 +95,7 @@ RegisterNUICallback("GetDateDifference", function(Data, Cb)
 end)
 
 RegisterNUICallback('TriggerAction', function(Data, Cb) 
-    if not IsPlayerAdmin() then return end
-    if Data.EventType == nil then Data.EventType = 'Client' end
+        if Data.EventType == nil then Data.EventType = 'Client' end
     if Data.Event ~= nil and Data.EventType ~= nil then
         if Data.EventType == 'Client' then
             TriggerEvent(Data.Event, Data.Result)
@@ -111,8 +107,7 @@ RegisterNUICallback('TriggerAction', function(Data, Cb)
 end)
 
 RegisterNUICallback("DeleteReport", function(Data, Cb)
-    if not IsPlayerAdmin() then return end
-    local Success, ServerId = DeleteReport(Data.Report['Id'])
+        local Success, ServerId = DeleteReport(Data.Report['Id'])
     if Success then
         TriggerServerEvent('j0-admin/server/send-chat-report', ServerId, 
             '\n^0─────────────────────────────────────\n^1[Report '..Lang:t('info.report_close')..'] ^0→ '..
