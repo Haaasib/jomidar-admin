@@ -206,36 +206,6 @@ function GetDateDifference(Type, Bans)
     return FilteredBans, CategoryBans
 end
 
-function AdminCheck(ServerId)
-    local Player = QBCore.Functions.GetPlayer(ServerId)
-    local Prom = promise:new()
-    if Player ~= nil then
-        local Group = QBCore.Functions.GetPermission(ServerId)
-        if type(Group) ~= 'table' then -- Old QB
-            for i=1, #Config.Settings['AdminGroups'] do
-                local ConfigGroup = Config.Settings['AdminGroups'][i]
-                if Group == ConfigGroup then
-                    Prom:resolve(true)
-                end
-            end
-            Prom:resolve(false)
-        else -- New QB
-            for Rank, Bool in pairs(Group) do
-                for i=1, #Config.Settings['AdminGroups'] do
-                    local ConfigGroup = Config.Settings['AdminGroups'][i]
-                    if Rank == ConfigGroup and Bool then
-                        Prom:resolve(true)
-                    end
-                end
-            end
-            Prom:resolve(false)
-        end
-    else
-        Prom:resolve(false)
-    end
-    return Citizen.Await(Prom)
-end
-
 function GetBanTime(Expires)
     local Time = os.time()
     local Expiring = Expires == '1 Hour' and os.date("*t", Time + 3600) or

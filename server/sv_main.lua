@@ -121,7 +121,7 @@ AddEventHandler('playerConnecting', onPlayerConnecting)
 
 RegisterNetEvent("j0-admin/server/try-open-menu", function(KeyPress)
     local src = source
-    if not AdminCheck(src) then return end
+    
     TriggerClientEvent('j0-admin/client/try-open-menu', src, KeyPress)
 end)
 
@@ -129,7 +129,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/unban-player", function(BanId)
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     local BanData = MySQL.query.await('SELECT * FROM bans WHERE banid = ?', {BanId})
     if BanData and BanData[1] ~= nil then
@@ -142,7 +142,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/ban-player", function(ServerId, Expires, Reason)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local License = QBCore.Functions.GetIdentifier(ServerId, 'license')
     local Steam = QBCore.Functions.GetIdentifier(ServerId, 'steam')
     local BanData = nil
@@ -185,7 +185,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/kick-all-players", function(Reason)
     local src = source
-    if not AdminCheck(src) then return end
+    
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
         local Player = QBCore.Functions.GetPlayer(v)
         if Player ~= nil then 
@@ -196,7 +196,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/kick-player", function(ServerId, Reason)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     DropPlayer(Source, Reason)
     TriggerClientEvent('QBCore:Notify', src, Lang:t('info.kicked'), 'success')
@@ -204,7 +204,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/set-money", function(ServerId, MoneyType, MoneyAmount)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     TPlayer.Functions.SetMoney(MoneyType, MoneyAmount, 'Admin-Menu-Set-Money')
@@ -213,7 +213,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/give-money", function(ServerId, MoneyType, MoneyAmount)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     TPlayer.Functions.AddMoney(MoneyType, MoneyAmount, 'Admin-Menu-Give-Money')
@@ -221,7 +221,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/give-item", function(ServerId, ItemName, ItemAmount)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     TPlayer.Functions.AddItem(ItemName, ItemAmount)
@@ -237,7 +237,7 @@ RegisterNetEvent('jomidar:additem', function(ItemName, ItemAmount)
 end)
 RegisterNetEvent("j0-admin/server/request-gang", function(ServerId, GangName)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     TPlayer.Functions.SetGang(GangName, 1, 'Admin-Menu-Give-Gang')
@@ -246,7 +246,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/request-job", function(ServerId, JobName)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     TPlayer.Functions.SetJob(JobName, 1, 'Admin-Menu-Give-Job')
@@ -255,7 +255,7 @@ end)
 
 RegisterNetEvent('j0-admin/server/start-spectate', function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     -- Check if Person exists
     local Target = GetPlayerPed(ServerId)
@@ -278,7 +278,7 @@ end)
 
 RegisterNetEvent('j0-admin/server/stop-spectate', function()
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     local SteamIdentifier = QBCore.Functions.GetIdentifier(src, "steam")
     if SpectateData[SteamIdentifier] ~= nil and SpectateData[SteamIdentifier]['Spectating'] then
@@ -288,35 +288,35 @@ end)
 
 RegisterNetEvent("j0-admin/server/drunk", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/drunk', Source)
 end)
 
 RegisterNetEvent("j0-admin/server/animal-attack", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/animal-attack', Source)
 end)
 
 RegisterNetEvent("j0-admin/server/set-fire", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/set-fire', Source)
 end)
 
 RegisterNetEvent("j0-admin/server/fling-player", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/fling-player', Source)
 end)
 
 RegisterNetEvent("j0-admin/server/play-sound", function(ServerId, SoundId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/play-sound', Source, SoundId)
 end)
@@ -325,7 +325,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/toggle-blips", function()
     local src = source
-    if not AdminCheck(src) then return end
+    
     local BlipData = {}
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
         BlipData[#BlipData + 1] = {
@@ -340,7 +340,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/teleport-all", function()
     local src = source
-    if not AdminCheck(src) then return end
+    
     
     local SourcePlayer = QBCore.Functions.GetPlayer(src)
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
@@ -356,7 +356,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/teleport-player", function(ServerId, Type)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local Msg = ""
     if Type == 'Goto' then
@@ -383,7 +383,7 @@ end)
 -- Change this if needed changes
 RegisterNetEvent("j0-admin/server/set-environment", function(Weather, Hour, Minute)
     local src = source
-    if not AdminCheck(src) then return end
+    
     Hour, Minute = tonumber(Hour), tonumber(Minute)
 
     if Weather ~= nil then
@@ -406,28 +406,28 @@ end)
 
 RegisterNetEvent("j0-admin/server/open-bennys", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('qb-customs:client:EnterCustomsOverride', Source) -- Custom Event for Bennys (Change to work with yours.)
 end)
 
 RegisterNetEvent("j0-admin/server/kill", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('hospital:client:KillPlayer', Source)
 end)
 
 RegisterNetEvent("j0-admin/server/delete-area", function(Type, Radius)
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     TriggerClientEvent('j0-admin/client/delete-area', src, Type, Radius)
 end)
 
 RegisterNetEvent("j0-admin/server/freeze-player", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -442,7 +442,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/toggle-infinite-ammo", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -457,7 +457,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/toggle-infinite-stamina", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -472,7 +472,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/toggle-cloak", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -487,7 +487,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/toggle-godmode", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -502,7 +502,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/set-food-drink", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -516,7 +516,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/remove-stress", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -529,7 +529,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/set-armor", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     if TPlayer ~= nil then
@@ -540,7 +540,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/reset-skin", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     local TPlayer = QBCore.Functions.GetPlayer(Source)
     local ClothingData = MySQL.Sync.fetchAll('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', { TPlayer.PlayerData.citizenid, 1 })
@@ -553,14 +553,14 @@ end)
 
 RegisterNetEvent("j0-admin/server/set-model", function(ServerId, Model)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('j0-admin/client/set-model', Source, Model)
 end)
 
 RegisterNetEvent("j0-admin/server/revive-all", function()
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
 		local Player = QBCore.Functions.GetPlayer(v)
@@ -572,7 +572,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/revive-in-distance", function(Radius)
     local src = source
-    if not AdminCheck(src) then return end
+    
 
     local Coords, Radius = GetEntityCoords(GetPlayerPed(src)), Radius ~= nil and tonumber(Radius) or 5.0
 	for k, v in pairs(QBCore.Functions.GetPlayers()) do
@@ -589,7 +589,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/revive-target", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('hospital:client:Revive', Source, true)
     TriggerClientEvent('QBCore:Notify', src, Lang:t('info.gave_revive'), 'success')
@@ -597,7 +597,7 @@ end)
 
 RegisterNetEvent("j0-admin/server/open-clothing", function(ServerId)
     local src = source
-    if not AdminCheck(src) then return end
+    
     local Source = ServerId ~= nil and ServerId or src
     TriggerClientEvent('qb-clothing:client:openMenu', Source)
     TriggerClientEvent('QBCore:Notify', src, Lang:t('info.gave_clothing'), 'success')
