@@ -16,9 +16,7 @@ https://www.youtube.com/watch?v=fy68G2Yxjtg
 
 ## Perms
 
-```add_principal identifier.YOUR_IDENTIFIER group.admin```
-
-```add_ace group.admin admin allow```
+```add_principal identifier.YOUR_IDENTIFIER qbcore.god```
 
 ## Logs
 
